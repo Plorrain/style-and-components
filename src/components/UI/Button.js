@@ -1,11 +1,18 @@
 import React from 'react';
 
-import './Button.module.css';
+import classes from './Button.module.css';
 
 function Button(props) {
 return (
-  <div>{props}</div>
-)
+    <div>
+      <button className={classes.button}
+      type={props.type || 'button'}
+      onClick={props.onClick}
+      >
+        {props.children}
+      </button>
+    </div>
+  )
 }
 
 export default Button;
