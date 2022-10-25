@@ -33,8 +33,8 @@ function AddUser(props) {
 
   return (
     <div>
-      <ErrorModal title='An error occured!' message='Something went wrong.' />
       <Card className={classes.input}>
+      <ErrorModal title='An error occured!' message='Something went wrong.' />
         <form onSubmit={addUserHandler}>
           <label htmlFor='username'>Username</label>
           <input id='username' type='text'
