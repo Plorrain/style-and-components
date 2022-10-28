@@ -8,19 +8,24 @@ import classes from './AddUser.module.css';
 function AddUser(props) {
   const [enteredUsername, setEnteredUsername] = useState('');
   const [enteredAge, setEnteredAge] = useState('');
+  const [error, setError] = useState();
 
   const addUserHandler = (event) => {
     event.preventDefault();
     // console.log(enteredUsername, enteredAge);
-    if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
-      return;
-    };
-    if (+enteredAge < 1) {
-      return;
-    };
-    props.onAddUser(enteredUsername, enteredAge);
-    setEnteredUsername('');
-    setEnteredAge('');
+      if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
+        setError({
+          title: 'Invalid Input',
+          message: 'Please enter name and age (non-empty values).'
+        });
+        return;
+      };
+      if (+enteredAge < 1) {
+        return;
+      };
+      props.onAddUser(enteredUsername, enteredAge);
+      setEnteredUsername('');
+      setEnteredAge('');
   };
 
   const usernameChangeHandler = (event) => {
