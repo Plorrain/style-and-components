@@ -23,9 +23,8 @@ function AddUser(props) {
       if (+enteredAge < 1) {
         setError({
           title: 'Invalid Age',
-          message: 'Please enter a valid age (greater than 0years old).'
+          message: 'Please enter a valid age (greater than 0 years old).'
         });
-        return;
         return;
       };
       props.onAddUser(enteredUsername, enteredAge);
@@ -43,7 +42,7 @@ function AddUser(props) {
 
   return (
     <div>
-      {error && <ErrorModal title='An error occured!' message='Something went wrong.' />}
+      {error && <ErrorModal title={error.title} message={error.message} />}
       <Card className={classes.input}>
         <form onSubmit={addUserHandler}>
           <label htmlFor='username'>Username</label>
