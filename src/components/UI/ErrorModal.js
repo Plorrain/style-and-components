@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import ReactDOM from 'react-dom';
 
 import Card from './Card';
 import Button from './Button';
@@ -27,7 +28,7 @@ function ModalOverlay(props) {
 function ErrorModal(props) {
   return (
     <Fragment>
-
+      {ReactDOM.createPortal(<Backdrop onClick={props.onHandleError} />, document.getElementById('backdrop-root'))}
     </Fragment>
   );
 }
