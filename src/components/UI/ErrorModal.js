@@ -40,7 +40,7 @@ function ErrorModal(props) {
           message={props.message}
           onHandleError={props.onHandleError}
         />,
-        document.getElementById('backdrop-root')
+        document.getElementById('overlay-root')
       )};
     </Fragment>
   );
