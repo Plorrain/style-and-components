@@ -4,11 +4,13 @@ import Card from './Card';
 import Button from './Button';
 import classes from './ErrorModal.module.css';
 
-function ErrorModal(props) {
+function Backdrop(props) {
+return <div className={classes.backdrop} onClick={props.onHandleError} />;
+}
+
+function ModalOverlay(props) {
   return (
-    <Fragment>
-      <div className={classes.backdrop} onClick={props.onHandleError}>
-        <Card className={classes.modal}>
+    <Card className={classes.modal}>
           <header className={classes.header}>
             <h2>{props.title}</h2>
           </header>
@@ -19,7 +21,13 @@ function ErrorModal(props) {
             <Button onClick={props.onHandleError}>Okay</Button>
           </footer>
         </Card>
-      </div>
+  );
+}
+
+function ErrorModal(props) {
+  return (
+    <Fragment>
+
     </Fragment>
   );
 }
