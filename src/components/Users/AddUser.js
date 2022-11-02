@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Wrapper from '../Helpers/Wrapper';
 import ErrorModal from '../UI/ErrorModal';
 import Card from '../UI/Card';
@@ -7,6 +7,9 @@ import Button from '../UI/Button';
 import classes from './AddUser.module.css';
 
 function AddUser(props) {
+  const nameInputRef = useRef();
+  const ageInputRef = useRef();
+
   const [enteredUsername, setEnteredUsername] = useState('');
   const [enteredAge, setEnteredAge] = useState('');
   const [error, setError] = useState();
