@@ -16,15 +16,17 @@ function AddUser(props) {
 
   const addUserHandler = (event) => {
     event.preventDefault();
-    // console.log(enteredUsername, enteredAge);
-      if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
+    const enteredName = nameInputRef.current.value;
+    const enteredUserAge = ageInputRef.current.value;
+
+      if (enteredName.trim().length === 0 || enteredUserAge.trim().length === 0) {
         setError({
           title: 'Invalid Input',
           message: 'Please enter name and age (non-empty values).'
         });
         return;
       };
-      if (+enteredAge < 1) {
+      if (+enteredUserAge < 1) {
         setError({
           title: 'Invalid Age',
           message: 'Please enter a valid age (greater than 0 years old).'
