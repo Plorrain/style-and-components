@@ -60,14 +60,18 @@ function AddUser(props) {
       <Card className={classes.input}>
         <form onSubmit={addUserHandler}>
           <label htmlFor='username'>Username</label>
-          <input id='username' type='text'
+          <input
+            id='username' type='text'
             value={enteredUsername}
             onChange={usernameChangeHandler}
+            ref={nameInputRef}
             />
           <label htmlFor='age'>Age</label>
-          <input id='age' type='number'
+          <input
+            id='age' type='number'
             value={enteredAge}
             onChange={ageChangeHandler}
+            ref={ageInputRef}
             />
           <Button type='submit'>Add User</Button>
         </form>
